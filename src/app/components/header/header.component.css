@@ -1,0 +1,13 @@
+.carrito{
+    font-size: 9pt;
+    font-weight: bold;
+    background-color: yellow;
+    color:black;
+    padding-left: 3px;
+    padding-right: 2px;
+}
+
+.carrito-total{
+    margin-left: 3px;
+    color: yellow;
+}

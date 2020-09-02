@@ -1,0 +1,47 @@
+
+    <div class="card mt-2">
+
+      <div class="card-header bg-warning text-blue d-flex justify-content-between">
+        <h5>Resumen</h5>
+    </div>
+
+      <div class="card-body">
+
+      <h4>Cliente: {{ this.pedidoService.pedido.nombreCliente }}</h4>
+      <h6>Productos: {{ this.pedidoService.pedido.pedidoDetalle.length }} </h6>
+      <h5>Total: {{ this.pedidoService.pedido.total | currency }}</h5>
+
+    </div>
+
+    </div>
+
+    <div class="card text-center mt-2">
+      
+    <table class="rounded mi-tabla ">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Total</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let producto of this.pedidoService.pedido.pedidoDetalle; let posicion = index">
+            <th scope="row">{{ producto.productoId }}</th>
+            <td>{{ producto.nombreProducto}}</td>
+            <td> <input (input)="calcularCantidades(posicion)" [(ngModel)]="producto.cantidad" class="form-control" type="number" > </td>
+            <td>{{ producto.precio | currency}}</td>
+            <td>{{ producto.total | currency}}</td>
+            <td> <button class="btn btn-danger" (click)="eliminar(posicion)">X</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <div class="card-body text-center">
+      <button class="btn btn-success" (click)="guardarPedidoFinal()">Pedir por WhatsApp</button>
+    </div>

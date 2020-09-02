@@ -1,0 +1,9 @@
+.fondo{
+    background-color: black;
+    color:white;
+    background-image:url("../../../assets/images/Logo-Gorichelas.jpeg");
+    min-height: 30rem;
+    height: 200%;
+    padding-top: 8rem;
+}
+

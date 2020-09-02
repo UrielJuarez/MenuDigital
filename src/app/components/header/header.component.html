@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <div class="container">
+
+    <a class="navbar-brand" href="#">
+      <img src="../../assets/images/Logo-Gorichelas.png" style="margin-top: -5px;" width="35px">
+      Gorichelas
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact:true }">
+          <a class="nav-link" routerLink="/">Home </a>
+        </li>
+        <li class="nav-item" routerLinkActive="active" style="display: none;">
+          <a class="nav-link" routerLink="/clientes">Clientes </a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/productos">Carta Menú</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/pedidos">Mi Carrito 
+            <span class="rounded carrito"> {{ this.pedidoService.pedido.pedidoDetalle.length }}  </span>
+            <span class="carrito-total"> 
+              {{ this.pedidoService.pedido.total == 0 ? ' ' : this.pedidoService.pedido.total | currency }}
+            </span>
+          </a> 
+        </li>
+        <li class="nav-item" routerLinkActive="active" style="display: none;">
+          <a class="nav-link" routerLink="/pedidos-listado">Historial Pedidos</a>
+        </li>
+
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link disabled" routerLink="/pedidos"> {{ this.pedidoService.pedido.nombreCliente  }} </a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</nav>
